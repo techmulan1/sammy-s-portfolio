@@ -64,33 +64,106 @@ dots.forEach((dot, i) => {
 const toggleBtn = document.getElementById('theme-toggle');
 const themeIcon = document.getElementById('theme-icon');
 
-function update3DColors(isDark) {
-    if (typeof scene !== 'undefined') {
-        const color = isDark ? 0x000000 : 0xffffff;
-        scene.background = new THREE.Color(color);
-        
-        if (typeof ambientLight !== 'undefined') {
-            ambientLight.intensity = isDark ? 0.8 : 1.5;
-        }
-    }
-}
-
+// Function to handle the switch
 toggleBtn.addEventListener('click', () => {
-    document.body.classList.toggle('dark-mode');
+    document.body.classList.toggle('light-mode');
     
-    const isDark = document.body.classList.contains('dark-mode');
+    const isLight = document.body.classList.contains('light-mode');
     
-    themeIcon.textContent = isDark ? '☀️' : '🌙';
-    update3DColors(isDark);
+    // Update Icon: Sun for light mode, Moon for dark mode
+    themeIcon.textContent = isLight ? '☀️' : '🌙';
     
-    localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    // Save the choice
+    localStorage.setItem('theme', isLight ? 'light' : 'dark');
 });
 
+// Load preference on startup
 window.addEventListener('DOMContentLoaded', () => {
     const savedTheme = localStorage.getItem('theme');
-    if (savedTheme === 'dark') {
-        document.body.classList.add('dark-mode');
+    
+    // Only add the class if the user specifically chose 'light' before
+    if (savedTheme === 'light') {
+        document.body.classList.add('light-mode');
         themeIcon.textContent = '☀️';
-        update3DColors(true);
+    } else {
+        // Default stays dark
+        themeIcon.textContent = '🌙';
     }
+});
+
+
+
+
+import * as THREE from 'https://unpkg.com/three@0.160.0/build/three.module.js';
+import { GLTFLoader } from 'https://unpkg.com/three@0.160.0/examples/jsm/loaders/GLTFLoader.js';
+
+function initStone(containerId, stoneColor, modelPath) {
+    const container = document.getElementById(containerId);
+    
+    if (!container) {
+        console.error(`Container #${containerId} not found!`);
+        return;
+    }
+
+    const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera(75, container.clientWidth / container.clientHeight, 0.1, 1000);
+    camera.position.z = 5;
+
+    const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+    renderer.setSize(container.clientWidth, container.clientHeight);
+    container.appendChild(renderer.domElement);
+
+    // Stronger lighting to ensure visibility
+    const ambientLight = new THREE.AmbientLight(0xffffff, 2);
+    scene.add(ambientLight);
+    
+    const pointLight = new THREE.PointLight(stoneColor, 50);
+    pointLight.position.set(2, 3, 4);
+    scene.add(pointLight);
+
+    const loader = new GLTFLoader();
+    let model;
+
+    loader.load(modelPath, (gltf) => {
+        model = gltf.scene;
+        model.scale.set(3, 3, 3); // Made them bigger to be sure they show
+        
+        model.traverse((node) => {
+            if (node.isMesh) {
+                node.material = new THREE.MeshStandardMaterial({
+                    color: stoneColor,
+                    metalness: 1,
+                    roughness: 0.1
+                });
+            }
+        });
+        scene.add(model);
+        console.log(`Stone ${containerId} loaded!`);
+    }, undefined, (err) => {
+        console.warn(`Model failed for ${containerId}, using Octahedron.`);
+        const geometry = new THREE.OctahedronGeometry(1.5, 0);
+        const material = new THREE.MeshStandardMaterial({ color: stoneColor, metalness: 1 });
+        model = new THREE.Mesh(geometry, material);
+        scene.add(model);
+    });
+
+    const animate = () => {
+        requestAnimationFrame(animate);
+        if (model) {
+            model.rotation.y += 0.01;
+            model.position.y = Math.sin(Date.now() * 0.0015) * 0.2;
+        }
+        renderer.render(scene, camera);
+    };
+    animate();
+}
+
+// At the very bottom of your script.js
+window.addEventListener('DOMContentLoaded', () => {
+    console.log("DOM fully loaded, initializing stones...");
+    
+    // initStone(ID, Color, FilePath)
+    initStone('container-premium', 0x00f2ff, './premium.glb'); 
+    initStone('container-elite', 0xffd700, './premium.glb');   
+    initStone('container-advanced', 0xbc13fe, './premium.glb'); 
 });

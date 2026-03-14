@@ -270,28 +270,33 @@ section {
 /* This is the styling of the dark and light modeeeee */
 
 :root {
+    --bg-color: #000000;
+    --text-color: #ffffff;
+    --accent-color: #ffff00;
+    --btn-bg: #1a1a1a;
+}
+
+body.light-mode {
     --bg-color: #ffffff;
     --text-color: #1a1a1a;
     --accent-color: #007BFF;
     --btn-bg: #eeeeee;
-    --link-color: #007BFF;
 }
 
-body.dark-mode {
-    --bg-color: #000000;
-    --text-color: #ffffff;
-    --accent-color: #ffff00;
-    --btn-bg: #333333;
-    --link-color: #ffff00;
-}
 
 body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color 0.5s ease;
+}
+
+/* body {
     background-color: var(--bg-color);
     color: var(--text-color);
     transition: background-color 0.5s ease, color 0.5s ease;
     margin: 0;
     min-height: 100vh;
-}
+} */
 
 #theme-toggle {
     position: fixed;
@@ -346,19 +351,10 @@ body {
 
 .maincard h1 {
     margin: 50px auto;
+    color: #ffffff;
+    font-size: 2rem;
 }
 
-/* main .maincard .card{
-    padding: 50px;
-    text-align: center;
-    align-items: center;
-    display: flex;
-    justify-content: center;
-    font-size: 2rem;
-    max-width: 800px;
-    border-radius: 10px;
-    box-shadow: rgba(0, 34, 255, 0.25) 0px 54px 55px, rgba(0, 34, 224, 0.12) 0px -12px 30px, rgba(10, 62, 232, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(5, 36, 238, 0.09) 0px -3px 5px;
-} */
 
 .card {
     background: rgba(255, 255, 255, 0.03);
@@ -368,10 +364,11 @@ body {
     font-size: 24px;
     padding: 50px;
     max-width: 800px;
+    color: #ffffff;
 
     box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5), 0 0 15px rgba(0, 81, 255, 0.1);
 
-    p{
+    p {
         margin-bottom: 30px;
     }
 }
@@ -382,38 +379,340 @@ body {
     margin-right: 15px;
 }
 
-/* @keyframes shinyPulse {
-    0% {
-        box-shadow:
-            0 0 15px 2px rgba(0, 242, 255, 0.8),
-            0 0 40px 10px rgba(0, 81, 255, 0.3);
-        transform: scale(1);
-    }
 
-    50% {
-        box-shadow:
-            0 0 25px 5px rgba(0, 242, 255, 0.9),
-            0 0 120px 40px rgba(0, 81, 255, 0.5);
-        transform: scale(1.02);
-    }
-
-    100% {
-        box-shadow:
-            0 0 15px 2px rgba(0, 242, 255, 0.8),
-            0 0 40px 10px rgba(0, 81, 255, 0.3);
-        transform: scale(1);
-    }
+footer {
+    color: #eeeeee;
 }
 
-.card {
-    animation: shinyPulse 4s infinite ease-in-out;
-    border: 1px solid rgba(0, 242, 255, 0.4);
+footer section div {
+
+    padding: 0;
+    margin: 0;
+
+    h1 {
+        padding: 0;
+        margin: 0;
+
+    }
+
+    p {
+        padding: 0;
+        margin-top: -40px;
+        margin-bottom: 25px;
+        font-size: 3rex;
+
+
+    }
+
+}
+
+/* Styling my 3d element */
+
+/* #container3d {
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+    pointer-events: none;
 } */
 
-.moving-border {
-    position: relative;
-    padding: 2px; /* This creates the border thickness */
-    background: #000;
-    border-radius: 15px;
-    overflow: hidden;
+
+
+#container3d {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
 }
+
+
+.motherpackage {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    border: 1px solid rgba(0, 242, 255, 0.5);
+    border-radius: 15px;
+    padding: 50px 100px;
+}
+
+.premium,
+.elite,
+.advanced {
+    width: 300px;
+    height: 450px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    transition: transform 0.3s ease;
+}
+
+.premium:hover,
+.elite:hover,
+.advanced:hover {
+    transform: translateY(-10px);
+    border-color: rgba(0, 242, 255, 0.5);
+}
+
+.stone-container {
+    width: 100%;
+    height: 300px;
+    position: relative;
+    display: block;
+}
+
+
+
+/* THISSSS NA THE LESPONSIVE STYLINGGG */
+
+@media (max-width: 400px) {
+
+    header {
+        padding-top: 5px;
+        margin-bottom: 2vh;
+    }
+
+    .navlinks a {
+        gap: 20px;
+        font-size: 10px;
+
+    }
+
+    .navcontact a {
+        font-size: 10px;
+    }
+
+    nav {
+        height: 20px;
+        margin: 3px;
+    }
+
+    .maincard {
+        h1 {
+            font-size: 1rem;
+        }
+    }
+
+    .motherpackage {
+        gap: 30px;
+        border-radius: 15px;
+        padding: 15px 0px;
+    }
+
+
+}
+
+
+@media (max-width: 480px) {
+
+    /* Make i style the nav bar fest */
+
+    header {
+        padding-top: 5px;
+        margin-bottom: 5vh;
+    }
+
+    nav {
+        height: 40px;
+        margin: 5px 10px;
+    }
+
+    nav .logo {
+        margin: auto 0;
+    }
+
+    nav .logo img {
+        margin: auto 0;
+        width: 50px;
+    }
+
+    .navlinks {
+        gap: 20px;
+        font-size: 16px;
+    }
+
+    .random {
+        display: none;
+    }
+
+    section.hero-section .top {
+        display: flex;
+        flex-wrap: wrap;
+
+        margin: 20px;
+
+        .left {
+            max-width: 100%;
+
+            h1 {
+                font-size: 2rem;
+                margin-bottom: 20px;
+            }
+
+            p {
+                max-width: 1000px;
+                font-weight: 300;
+
+            }
+        }
+
+        .right {
+            max-width: 100%;
+
+            h1 {
+                font-size: 2rex;
+                margin-bottom: 20px;
+            }
+
+            p {
+                max-width: 1000px;
+                font-weight: 300;
+            }
+        }
+
+        .center {
+            text-align: center;
+            align-items: center;
+            display: flex;
+            justify-content: center;
+            margin: auto 0;
+        }
+    }
+
+    /* Giving my main the best styling possibleeee */
+
+    .maincard {
+        h1 {
+            margin: 20px auto;
+            color: #ffffff;
+            font-size: 1.5rem;
+        }
+    }
+
+    .card {
+        font-size: 14px;
+        padding: 20px;
+
+        p {
+            margin-bottom: 10px;
+        }
+    }
+
+    .checkmark {
+        margin-right: 10px;
+    }
+
+    /* Make we con style our footer nowwww */
+
+    footer {
+        width: 100%;
+
+        section {
+            width: 100%;
+        }
+    }
+
+
+    footer section div {
+        /* width: 100%; */
+
+        padding: 0;
+        margin: 0;
+
+        h1 {
+            font-size: 2rex;
+            padding: 10px;
+
+        }
+
+        p {
+            padding: 0;
+            margin-top: -25px;
+            margin-bottom: 5px;
+            font-size: 1.5rex;
+            padding: 10px;
+
+
+        }
+
+    }
+
+    .motherpackage {
+        gap: 20px;
+        border-radius: 15px;
+        padding: 40px 0px;
+        width: 100%;
+    }
+
+
+    .stone-container {
+        width: 100%;
+        /* height: 700px; */
+    }
+/* 
+    .premium,
+    .elite,
+    .advanced {
+        width: 700px;
+        height: 450px;
+        background: rgba(255, 255, 255, 0.03);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+        transition: transform 0.3s ease;
+    } */
+
+
+
+
+
+}
+
+
+
+@media (min-width: 800px) {
+
+    section.hero-section .top {
+        display: block;
+        /* flex-wrap: wrap; */
+    }
+
+    .random {
+        display: none;
+    }
+
+    .right {
+        max-width: 100%;
+
+        h1 {
+            font-size: 2rex;
+            margin-bottom: 20px;
+        }
+
+        p {
+            max-width: 1000px;
+            font-weight: 300;
+        }
+    }
+
+    .left {
+        max-width: 100%;
+    }
+
+    .logo {
+
+        width: 50px;
+
+    }
+
+}
+
+@media (max-width: 600px) {}

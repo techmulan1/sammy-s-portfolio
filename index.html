@@ -5,6 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sammy Sam</title>
     <link rel="stylesheet" href="style.css" />
+
+    <script type="importmap">
+{
+  "imports": {
+    "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+    "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
+  }
+}
+</script>
+
+
 </head>
 
 <body>
@@ -102,7 +113,6 @@
                     <!-- <p>3</p> -->
                     <video src="./assets/Lvideo3.mp4" autoplay loop muted></video>
 
-
                     <!-- <p>1</p> -->
                     <video src="./assets/LVideo1.mp4" autoplay loop muted></video>
 
@@ -173,13 +183,13 @@
 
                 </p>
 
-                                <p>
+                <p>
                     <span class="checkmark">🗹</span>
                     Create premium video content
 
                 </p>
 
-                                <p>
+                <p>
                     <span class="checkmark">🗹</span>
                     Produce a personal documentary
 
@@ -205,15 +215,15 @@
 
                 </p>
 
-                                <p>
+                <p>
                     <span class="checkmark">🗹</span>
                     Build your legacy website
 
                 </p>
 
-                
 
-                
+
+
 
             </div>
 
@@ -221,7 +231,33 @@
 
             <footer>
 
-                
+                <!-- This is my footer and yeah yeah i know it's in the main tag, na experiment carry tech mulan reach here -->
+
+                <section>
+
+                    <div>
+                        <h1> OUR PACKAGES </h1>
+
+                        <p> You get the best of everything by choosing any of these </p>
+                    </div>
+
+                    <div class="motherpackage">
+                        <div class="premium">
+                            <div id="container-premium" class="stone-container"></div>
+                            <h3>Premium</h3>
+                        </div>
+                        <div class="elite">
+                            <div id="container-elite" class="stone-container"></div>
+                            <h3>Elite</h3>
+                        </div>
+                        <div class="advanced">
+                            <div id="container-advanced" class="stone-container"></div>
+                            <h3>Advanced</h3>
+                        </div>
+                    </div>
+                </section>
+
+
 
 
             </footer>
@@ -230,7 +266,7 @@
         </div>
     </main>
 
-    <script src="script.js" type="module"></script>
+    <script type="module" src="script.js"></script>
 
 
 </body>
