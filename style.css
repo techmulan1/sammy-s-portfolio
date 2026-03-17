@@ -541,7 +541,7 @@ div.aboutbody {
     i {
         font-size: 5rem;
 
-        color: #008800    ;
+        color: #008800;
     }
 
 }
@@ -557,7 +557,7 @@ div.aboutbody {
 .progress-bar {
     width: 50%;
     height: 30px;
-    background-color: #008800 ;
+    background-color: #008800;
     border-radius: 10px;
     text-align: center;
     line-height: 30px;
@@ -567,11 +567,81 @@ div.aboutbody {
 
 }
 
-p.text{
+p.text {
     margin-top: 10px;
     font-size: 2.5rex;
 }
 
+
+/* I am styling the testimoniall sectioon */
+
+section.testimonial-section {
+    height: 50vh;
+    text-align: center;
+    align-items: center;
+    margin: auto 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.testimonial-section h1 {
+    padding: 20px 0px;
+}
+
+.testimonial-section span {
+    color: #007BFF;
+}
+
+.testimonial-window {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+    border-radius: 20px;
+    box-shadow: rgba(3, 102, 214, 0.3) 0px 0px 0px 3px;
+}
+
+.testimonial-train {
+    display: flex;
+    transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.testimonial-card {
+    flex: 0 0 100%;
+    padding: 40px;
+    text-align: center;
+    /* color: white; */
+    box-sizing: border-box;
+}
+
+.testimonial-card p {
+    font-size: clamp(1.2rem, 4vw, 1.8rem);
+    font-style: italic;
+    line-height: 1.6;
+}
+
+.dots {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.dot.active {
+    background: #00f2ff;
+    box-shadow: 0 0 10px #00f2ff;
+}
 
 
 

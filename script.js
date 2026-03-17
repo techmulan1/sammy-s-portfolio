@@ -177,3 +177,27 @@ let interval = setInterval(function () {
         percentText.innerText = count + '%'; 
     }
 }, 20); 
+
+// Styling the testimonial section
+
+
+let currentTestimonial = 0;
+const traini = document.querySelector('.testimonial-train');
+const doti = document.querySelectorAll('.dot');
+
+const totalTestimonials = document.querySelectorAll('.testimonial-card').length;
+
+function jumpTo(index) {
+    currentTestimonial = index;
+
+    traini.style.transform = `translateX(-${index * 100}%)`;
+    
+    doti.forEach((dot, i) => {
+        dot.classList.toggle('active', i === index);
+    });
+}
+
+setInterval(() => {
+    currentTestimonial = (currentTestimonial + 1) % totalTestimonials;
+    jumpTo(currentTestimonial);
+}, 5000);
