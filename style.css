@@ -729,27 +729,13 @@ p.text{
     }
 
 
-    .footer section div {
-        /* width: 100%; */
+    .footer section .packagehead {
+        width: 100%;
+        /* background-color: red; */
 
         padding: 0;
         margin: 0;
 
-        h1 {
-            font-size: 2rex;
-            padding: 10px;
-
-        }
-
-        p {
-            padding: 0;
-            margin-top: -25px;
-            margin-bottom: 5px;
-            font-size: 1.5rex;
-            padding: 10px;
-
-
-        }
 
     }
 
