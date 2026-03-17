@@ -330,11 +330,13 @@ body {
     transform: scale(1.1);
 }
 
+
 /* This is the styling of the glowing card */
+
+
 
 .maincard {
     background-color: #000000;
-    /* Pure black base */
     background-image: radial-gradient(circle at 50% 30%,
             rgba(0, 81, 255, 0.25) 0%,
             transparent 70%);
@@ -344,6 +346,7 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    padding-bottom: 50px;
 }
 
 
@@ -388,26 +391,27 @@ body {
 }
 
 
-footer {
+.footer {
     color: #eeeeee;
 }
 
-footer section div {
+.footer section div.packagehead {
 
     padding: 0;
-    margin: 0;
+    margin: 50px auto;
     text-align: center;
 
     h1 {
-        padding: 0;
+        padding: 5px;
         margin: 0;
+        color: #ffffff;
+        font-size: 2rem;
 
     }
 
     p {
         padding: 0;
-        margin-top: -40px;
-        margin-bottom: 25px;
+        /* margin-bottom: 25px; */
         font-size: 3rex;
 
 
@@ -416,14 +420,6 @@ footer section div {
 }
 
 /* Styling my 3d element */
-
-/* #container3d {
-    position: fixed;
-    inset: 0;
-    z-index: 100;
-    pointer-events: none;
-} */
-
 
 
 #container3d {
@@ -443,22 +439,43 @@ footer section div {
     gap: 30px;
     border: 1px solid rgba(0, 242, 255, 0.5);
     border-radius: 15px;
-    padding: 50px 100px;
+    padding: 50px 50px;
+}
+
+.motherpackage h3 {
+    margin-bottom: 20px;
+}
+
+.motherpackage p {
+    margin-bottom: 10px;
+    font-size: 2rex;
+}
+
+.checkmark2 {
+    color: #00f2ff;
+    filter: drop-shadow(0 0 8px rgba(0, 242, 255, 0.185));
+    margin-right: 15px;
+    font-size: 3rex;
 }
 
 .premium,
 .elite,
 .advanced {
-    width: 300px;
-    height: 450px;
+    width: 450px;
+    height: 600px;
     background: rgba(255, 255, 255, 0.03);
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 20px;
     display: flex;
     flex-direction: column;
-    align-items: center;
     position: relative;
     transition: transform 0.3s ease;
+}
+
+.ptext p,
+h3 {
+    padding: 0px 20px;
+    font-size: 18px;
 }
 
 .premium:hover,
@@ -474,6 +491,89 @@ footer section div {
     position: relative;
     display: block;
 }
+
+
+/* This is the styling of my footer section */
+
+footer {
+    padding: 50px 0px;
+    width: 100%;
+}
+
+section.aboutme {
+    width: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+div.abouthead {
+    width: 100%;
+    text-align: center;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    padding-bottom: 50px;
+
+
+
+}
+
+.skilldiv {
+    border: 1px solid;
+    padding: 10px 0px;
+    border-radius: 15px;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+}
+
+div.aboutbody {
+    max-width: 2000px;
+    gap: 50px;
+    display: flex;
+    /* justify-content: space-between; */
+    flex-wrap: wrap;
+    /* flex-direction: column; */
+
+    i {
+        font-size: 5rem;
+
+        color: #008800    ;
+    }
+
+}
+
+/* Progress bar */
+.progress-container {
+    width: 100%;
+    background-color: #e0e0e0;
+    border-radius: 10px;
+    margin: 20px 0;
+}
+
+.progress-bar {
+    width: 50%;
+    height: 30px;
+    background-color: #008800 ;
+    border-radius: 10px;
+    text-align: center;
+    line-height: 30px;
+    color: white;
+    transition: width 0.1s;
+    border: 1px solid rgba(0, 0, 0, 0.507);
+
+}
+
+p.text{
+    margin-top: 10px;
+    font-size: 2.5rex;
+}
+
+
+
 
 
 
@@ -620,7 +720,7 @@ footer section div {
 
     /* Make we con style our footer nowwww */
 
-    footer {
+    .footer {
         width: 100%;
 
         section {
@@ -629,7 +729,7 @@ footer section div {
     }
 
 
-    footer section div {
+    .footer section div {
         /* width: 100%; */
 
         padding: 0;

@@ -2,12 +2,12 @@ const train = document.querySelector('.bottom');
 const videos = document.querySelectorAll('.bottom video');
 const dots = document.querySelectorAll('.dot');
 
-let currentIndex = 3; 
+let currentIndex = 3;
 const totalOriginals = 7;
 
 function updateCarousel(isInstant = false) {
     if (isInstant) {
-        train.style.transition = 'none'; 
+        train.style.transition = 'none';
     } else {
         train.style.transition = 'transform 0.6s cubic-bezier(0.25, 1, 0.5, 1)';
     }
@@ -34,7 +34,7 @@ function nextSlide() {
         setTimeout(() => {
             currentIndex = 3;
             updateCarousel(true);
-        }, 600); 
+        }, 600);
     }
 }
 
@@ -64,29 +64,23 @@ dots.forEach((dot, i) => {
 const toggleBtn = document.getElementById('theme-toggle');
 const themeIcon = document.getElementById('theme-icon');
 
-// Function to handle the switch
 toggleBtn.addEventListener('click', () => {
     document.body.classList.toggle('light-mode');
-    
+
     const isLight = document.body.classList.contains('light-mode');
-    
-    // Update Icon: Sun for light mode, Moon for dark mode
+
     themeIcon.textContent = isLight ? '☀️' : '🌙';
-    
-    // Save the choice
+
     localStorage.setItem('theme', isLight ? 'light' : 'dark');
 });
 
-// Load preference on startup
 window.addEventListener('DOMContentLoaded', () => {
     const savedTheme = localStorage.getItem('theme');
-    
-    // Only add the class if the user specifically chose 'light' before
+
     if (savedTheme === 'light') {
         document.body.classList.add('light-mode');
         themeIcon.textContent = '☀️';
     } else {
-        // Default stays dark
         themeIcon.textContent = '🌙';
     }
 });
@@ -99,7 +93,7 @@ import { GLTFLoader } from 'https://unpkg.com/three@0.160.0/examples/jsm/loaders
 
 function initStone(containerId, stoneColor, modelPath) {
     const container = document.getElementById(containerId);
-    
+
     if (!container) {
         console.error(`Container #${containerId} not found!`);
         return;
@@ -113,10 +107,9 @@ function initStone(containerId, stoneColor, modelPath) {
     renderer.setSize(container.clientWidth, container.clientHeight);
     container.appendChild(renderer.domElement);
 
-    // Stronger lighting to ensure visibility
     const ambientLight = new THREE.AmbientLight(0xffffff, 2);
     scene.add(ambientLight);
-    
+
     const pointLight = new THREE.PointLight(stoneColor, 50);
     pointLight.position.set(2, 3, 4);
     scene.add(pointLight);
@@ -126,8 +119,8 @@ function initStone(containerId, stoneColor, modelPath) {
 
     loader.load(modelPath, (gltf) => {
         model = gltf.scene;
-        model.scale.set(3, 3, 3); // Made them bigger to be sure they show
-        
+        model.scale.set(3, 3, 3); 
+
         model.traverse((node) => {
             if (node.isMesh) {
                 node.material = new THREE.MeshStandardMaterial({
@@ -158,12 +151,29 @@ function initStone(containerId, stoneColor, modelPath) {
     animate();
 }
 
-// At the very bottom of your script.js
 window.addEventListener('DOMContentLoaded', () => {
     console.log("DOM fully loaded, initializing stones...");
-    
-    // initStone(ID, Color, FilePath)
-    initStone('container-premium', 0x00f2ff, './premium.glb'); 
-    initStone('container-elite', 0xffd700, './premium.glb');   
-    initStone('container-advanced', 0xbc13fe, './premium.glb'); 
+
+    initStone('container-premium', 0x00f2ff, './premium.glb');
+    initStone('container-elite', 0xffd700, './premium.glb');
+    initStone('container-advanced', 0xbc13fe, './premium.glb');
 });
+
+
+
+// This is the counting bar thing i'm styling
+
+let count = 0;
+let target = 100; 
+let bar = document.getElementById('bar');
+let percentText = document.getElementById('percent');
+
+let interval = setInterval(function () {
+    if (count >= target) {
+        clearInterval(interval);
+    } else {
+        count++;
+        bar.style.width = count + '%';
+        percentText.innerText = count + '%'; 
+    }
+}, 20); 
