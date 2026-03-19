@@ -517,6 +517,11 @@ div.abouthead {
     justify-content: center;
     padding-bottom: 50px;
 
+    h1 {
+        font-size: xx-large;
+        font-weight: 500;
+    }
+
 
 
 }
@@ -576,13 +581,18 @@ p.text {
 /* I am styling the testimoniall sectioon */
 
 section.testimonial-section {
-    height: 50vh;
+    height: 60vh;
     text-align: center;
     align-items: center;
     margin: auto 0;
     display: flex;
     flex-direction: column;
     justify-content: center;
+
+    h1 {
+        font-size: xx-large;
+        font-weight: 500;
+    }
 }
 
 .testimonial-section h1 {
@@ -643,6 +653,107 @@ section.testimonial-section {
     box-shadow: 0 0 10px #00f2ff;
 }
 
+/* This is the styling of the second about section.... the one near the footer */
+
+section.about2 {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 50px 10px;
+
+
+}
+
+.about2 .motherdiv {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+
+    p {
+        font-weight: 550;
+    }
+}
+
+.about2 .firstchild {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    text-align: left;
+    flex-wrap: wrap;
+    width: 100%;
+    padding-left: 70px;
+
+    .theheading {
+        h1 {
+            color: #ff2600;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            margin-bottom: 5px;
+            font-size: xx-large;
+            font-weight: 600;
+        }
+
+        p {
+            font-size: 20px;
+
+        }
+    }
+
+    .smalltext {
+        font-size: 21px;
+        line-height: 30px;
+
+    }
+}
+
+
+.about2 .secondchild {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+
+    img {
+        width: 600px;
+        border-radius: 15px;
+    }
+}
+
+/* Styling the random responsive gallery */
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 4px;
+}
+
+/* Create four equal columns that sits next to each other */
+.column {
+    flex: 25%;
+    max-width: 25%;
+    padding: 0 4px;
+}
+
+.column img {
+    margin-top: 8px;
+    vertical-align: middle;
+    width: 100%;
+}
+
+/* Responsive layout - makes a two column-layout instead of four columns */
+@media screen and (max-width: 800px) {
+    .column {
+        flex: 50%;
+        max-width: 50%;
+    }
+}
+
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+    .column {
+        flex: 100%;
+        max-width: 100%;
+    }
+}
+
 
 
 
@@ -655,6 +766,9 @@ section.testimonial-section {
         padding-top: 5px;
         margin-bottom: 2vh;
     }
+
+
+
 
     .navlinks a {
         gap: 20px;
@@ -683,6 +797,66 @@ section.testimonial-section {
         padding: 15px 0px;
     }
 
+    section.about2 .motherdiv {
+        display: block;
+    }
+
+    section.about2 {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        padding: 30px 5px;
+
+
+    }
+
+    .about2 .motherdiv {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+
+        p {
+            font-weight: 300;
+        }
+    }
+
+    .about2 .firstchild {
+        text-align: center;
+        padding-left: 0px;
+        padding-bottom: 20px;
+
+        .theheading {
+            h1 {
+                font-weight: 400;
+            }
+
+            p {
+                font-size: 20px;
+                margin-bottom: 20px;
+
+            }
+        }
+
+        .smalltext {
+            font-size: 14px;
+            line-height: 20px;
+
+
+
+        }
+    }
+
+
+    .about2 .secondchild {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+
+        img {
+            width: 100%;
+        }
+    }
+
 
 }
 
@@ -697,6 +871,8 @@ section.testimonial-section {
         padding-top: 5px;
         margin-bottom: 5vh;
     }
+
+
 
     nav {
         height: 40px;
@@ -763,6 +939,8 @@ section.testimonial-section {
             justify-content: center;
             margin: auto 0;
         }
+
+
     }
 
     /* Giving my main the best styling possibleeee */
@@ -828,6 +1006,66 @@ section.testimonial-section {
         filter: brightness(100%);
     }
 
+    section.about2 .motherdiv {
+        display: block;
+    }
+
+    section.about2 {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        padding: 30px 5px;
+
+
+    }
+
+    .about2 .motherdiv {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+
+        p {
+            font-weight: 300;
+        }
+    }
+
+    .about2 .firstchild {
+        text-align: center;
+        padding-left: 0px;
+        padding-bottom: 20px;
+
+        .theheading {
+            h1 {
+                font-weight: 400;
+            }
+
+            p {
+                font-size: 20px;
+                margin-bottom: 20px;
+
+            }
+        }
+
+        .smalltext {
+            font-size: 14px;
+            line-height: 20px;
+
+        }
+    }
+
+
+    .about2 .secondchild {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+
+        img {
+            width: 100%;
+        }
+    }
+
+
+
 
 }
 
@@ -837,16 +1075,107 @@ section.testimonial-section {
     }
 } */
 
+@media screen and (min-width: 1000px) and (max-width: 1400px) {
 
+
+
+
+
+    section.about2 {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        padding: 50px 10px;
+
+
+    }
+
+    .about2 .motherdiv {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+
+        p {
+            font-weight: 300;
+        }
+    }
+
+    .about2 .firstchild {
+        text-align: center;
+        padding-left: 10px;
+        padding-right: 10px;
+        padding-bottom: 20px;
+
+        .theheading {
+            h1 {
+                font-weight: 400;
+            }
+
+            p {
+                font-size: 20px;
+                margin-bottom: 20px;
+
+            }
+        }
+
+        .smalltext {
+            font-size: 17px;
+
+
+        }
+    }
+
+
+
+
+}
 
 
 @media screen and (min-width: 490px) and (max-width: 1000px) {
+
+    .left {
+
+        h1 {
+            font-size: 3.5rem;
+            margin-bottom: 30px;
+
+        }
+
+    }
 
     section.hero-section .top {
         display: block;
         flex-wrap: wrap;
         /* background-color: red; */
     }
+
+    .footer section div.packagehead {
+
+        padding: 0;
+        margin: 10px auto;
+        text-align: center;
+
+        h1 {
+            padding: 5px;
+            margin: 0;
+            color: #ffffff;
+            font-size: 2rem;
+
+        }
+
+        p {
+            padding: 0;
+            font-size: 2rex;
+
+
+        }
+
+    }
+
+    .motherpackage {
+        padding: 50px 10px;
+    }
+
 
 
     header {
@@ -909,5 +1238,81 @@ section.testimonial-section {
         filter: brightness(50%);
         /* transition: filter 0.3s ease, opacity 0.3s ease, transform 0.3s ease; */
     }
+
+    section.about2 .motherdiv {
+        display: block;
+    }
+
+    section.about2 {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        padding: 50px 10px;
+
+
+    }
+
+    .about2 .motherdiv {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+
+        p {
+            font-weight: 550;
+        }
+    }
+
+    .about2 .firstchild {
+        text-align: center;
+        padding-left: 5px;
+        padding-bottom: 20px;
+
+        .theheading {
+            h1 {
+                font-weight: 400;
+            }
+
+            p {
+                font-size: 20px;
+                margin-bottom: 20px;
+
+            }
+        }
+
+        .smalltext {
+            font-size: 21px;
+            line-height: 25px;
+
+        }
+    }
+
+
+    .about2 .secondchild {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+
+        img {
+            width: 100%;
+        }
+    }
+
+    .about2 .motherdiv {
+
+        p {
+            font-weight: 400;
+        }
+    }
+
+        .smalltext {
+        /* background-color: red; */
+
+        p{
+            font-size: 16px;
+            line-height: 20px;
+        }
+
+    }
+
 
 }
