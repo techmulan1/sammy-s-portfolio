@@ -6,7 +6,17 @@
     <title>Sammy Sam</title>
     <link rel="stylesheet" href="style.css" />
 
+    <!-- This is my AOS CSS Link -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+
+
+    <!-- This is my Tailwind CSS link -->
     <script src="https://cdn.tailwindcss.com"></script>
+
+
+    <!-- This is my font awesome link
+      -->
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
         integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
@@ -43,7 +53,7 @@
                 <a href="#gallery"> Gallery</a>
             </div>
 
-            <div class="random">
+            <div class="random" data-aos="fade-down" data-aos-delay="300">
                 <b>ZIUWA RECORDINGS INTERNATIONAL</b>
             </div>
 
@@ -56,7 +66,7 @@
 
         <section class="hero-section">
             <div class="top">
-                <div class="left">
+                <div class="left" data-aos="fade-left" data-aos-delay="300">
                     <h1>
                         VISUAL <br />
                         STORYTELLING
@@ -69,11 +79,11 @@
                     </p>
                 </div>
 
-                <div class="aboutimg center">
+                <div class="aboutimg center" data-aos="zoom-in" data-aos-delay="300">
                     <img src="./assets/camera-removebg-preview.png" alt="" />
                 </div>
 
-                <div class="right">
+                <div class="right" data-aos="fade-right" data-aos-delay="300" >
                     <h1>SINCE 2020</h1>
 
                     <p>
@@ -181,9 +191,9 @@
                 </div>
                 <div class="column">
                     <video src="./assets/Lvideo2.mp4" autoplay loop muted></video>
-                    <video src="./assets/Lvideo1.mp4" autoplay loop muted></video>
+                    <!-- <video src="./assets/Lvideo1.mp4" autoplay loop muted></video> -->
                     <!-- <video src="./assets/Lvideo2.mp4" autoplay loop muted></video> -->
-                    <!-- <video src="./assets/Lvideo2.mp4" autoplay loop muted></video> -->
+                    <video src="./assets/Lvideo2.mp4" autoplay loop muted></video>
                     <!-- <video src="./assets/Lvideo2.mp4" autoplay loop muted></video> -->
                     <!-- <video src="./assets/Lvideo2.mp4" autoplay loop muted></video> -->
                 </div>
@@ -574,7 +584,7 @@
             <div class="flex space-x-6 mt-4">
 
                 <!-- LinkedIn -->
-                <a href="https://linkedin.com/in/yourprofile" target="_blank"
+                <a href="https://www.linkedin.com/in/sammy-oziuwa-1baa0124b/" target="_blank"
                     class="text-gray-400 hover:text-white transition">
                     <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10" fill="currentColor" viewBox="0 0 24 24">
                         <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 
@@ -591,7 +601,7 @@
                     </svg>
                 </a>
 
-                <a href="mailto:youremail@example.com" class="text-gray-400 hover:text-white transition">
+                <a href="mailto:ozziuwasamuel@gmail.com" class="text-gray-400 hover:text-white transition">
                     <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10" fill="none" stroke="currentColor"
                         stroke-width="2" viewBox="0 0 24 24">
                         <path d="M4 4h16v16H4z" stroke="none" />
@@ -599,7 +609,7 @@
                     </svg>
                 </a>
 
-                <a href="https://wa.me/2347042383761" target="_blank" class="text-gray-400 hover:text-white transition">
+                <a href="https://wa.me/2349023062457" target="_blank" class="text-gray-400 hover:text-white transition">
                     <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10" fill="currentColor" viewBox="0 0 24 24">
                         <path
                             d="M12.04 2c-5.5 0-9.96 4.46-9.96 
@@ -625,6 +635,13 @@
 
 
     <script type="module" src="script.js"></script>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <script>
+        AOS.init();
+    </script>
+
 
 
 </body>
