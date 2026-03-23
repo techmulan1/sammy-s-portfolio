@@ -458,6 +458,10 @@ body {
     font-size: 3rex;
 }
 
+.tierexplainer {
+    color: #00f2ff;
+}
+
 .premium,
 .elite,
 .advanced {
@@ -470,12 +474,18 @@ body {
     flex-direction: column;
     position: relative;
     transition: transform 0.3s ease;
+
+    a{
+        text-decoration: none;
+        color: palegreen;
+    }
 }
+
 
 .ptext p,
 h3 {
     padding: 0px 20px;
-    font-size: 18px;
+    font-size: 14px;
 }
 
 .premium:hover,
@@ -529,9 +539,9 @@ div.abouthead {
 
 .skilldiv {
     border: 1px solid;
-    padding: 10px 0px;
+    padding: 10px 10px;
     border-radius: 15px;
-    width: 300px;
+    width: 400px;
     display: flex;
     flex-direction: column;
 }
@@ -726,7 +736,6 @@ section.about2 {
     padding: 0 4px;
 }
 
-/* Create four equal columns that sits next to each other */
 .column {
     flex: 25%;
     max-width: 25%;
@@ -739,7 +748,6 @@ section.about2 {
     width: 100%;
 }
 
-/* Responsive layout - makes a two column-layout instead of four columns */
 @media screen and (max-width: 800px) {
     .column {
         flex: 50%;
@@ -747,7 +755,6 @@ section.about2 {
     }
 }
 
-/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
 @media screen and (max-width: 600px) {
     .column {
         flex: 100%;
@@ -789,6 +796,13 @@ section.about2 {
     .maincard {
         h1 {
             font-size: 1rem;
+            
+        }
+
+        .card{
+            p{
+                font-size: 2rex;
+            }
         }
     }
 
@@ -960,6 +974,7 @@ section.about2 {
 
         p {
             margin-bottom: 10px;
+            font-size: 14px;
         }
     }
 
@@ -1305,10 +1320,10 @@ section.about2 {
         }
     }
 
-        .smalltext {
+    .smalltext {
         /* background-color: red; */
 
-        p{
+        p {
             font-size: 16px;
             line-height: 20px;
         }
